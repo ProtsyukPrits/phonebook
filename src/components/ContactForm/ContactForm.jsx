@@ -2,7 +2,6 @@ import { FormList, Label, Input, Button} from './ContactForm.styled';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import Notiflix from 'notiflix';
-//
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';

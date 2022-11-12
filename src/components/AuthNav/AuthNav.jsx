@@ -1,6 +1,6 @@
 import { BiLogIn } from 'react-icons/bi';
 import { GoSignIn } from 'react-icons/go';
-import { Link } from 'react-router-dom';
+import { Link } from './AuthNav.styled';
 import { NavItem } from './AuthNav.styled';
 
 

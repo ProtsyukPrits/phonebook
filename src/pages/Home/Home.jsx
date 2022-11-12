@@ -1,8 +1,11 @@
+import { Container } from "./Home.styled";
 
 const Home = () => {
   return (
-    <div>Your wellcome to contacts manager</div>
-  )
+    <Container>
+      <h1>Your wellcome to contacts manager</h1>
+    </Container>
+  );
 }
 
 export default Home;
