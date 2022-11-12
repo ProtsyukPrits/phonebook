@@ -7,9 +7,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: bisque;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(133, 133, 123, 0.704),
+    rgba(105, 111, 113, 0.5)
+  ),url(./images/phonebook.svg.png);
+  
+  background-size: 150px;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
