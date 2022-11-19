@@ -1,6 +1,8 @@
+import { Button } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-import { Label, Input } from './RegisterForm.styled';
+import { Label } from './RegisterForm.styled';
+import { Input } from '@chakra-ui/react';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -33,7 +35,7 @@ const RegisterForm = () => {
         Password
         <Input type="password" name="password" />
       </Label>
-      <button type="submit">Register</button>
+      <Button type="submit">Register</Button>
     </form>
   );
 };

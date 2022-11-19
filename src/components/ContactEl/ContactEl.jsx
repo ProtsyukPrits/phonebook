@@ -1,11 +1,21 @@
-import { PropTypes} from 'prop-types'
-import { Button, ListEl } from './ContactEl.styled';
+import { Button } from '@chakra-ui/react';
+import Avatars from 'components/Avatars';
+import { PropTypes } from 'prop-types';
+import { ListEl, UserInfo,UserName } from './ContactEl.styled';
 
 const ContactEl = ({ contact, onDelete }) => {
   return (
     <ListEl>
-      {contact.name} : {contact.number}
+      <UserInfo>
+        <Avatars />
+        <UserName>
+          {contact.name} : {contact.number}
+        </UserName>
+      </UserInfo>
       <Button
+        size="sm"
+        border="1px solid"
+        borderRadius='100%'
         type="button"
         onClick={() => {
           onDelete(contact.id);
@@ -16,7 +26,6 @@ const ContactEl = ({ contact, onDelete }) => {
     </ListEl>
   );
 };
-
 
 ContactEl.propTypes = {
   contact: PropTypes.objectOf(PropTypes.string).isRequired,

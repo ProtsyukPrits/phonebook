@@ -3,6 +3,7 @@ import ContactEl from 'components/ContactEl';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import { selectContacts, selectFilter } from 'redux/contacts/selectors';
+import { Items } from './ContactList.styled';
 
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
@@ -15,7 +16,7 @@ const ContactList = () => {
   );
 
   return (
-    <ul>
+    <Items>
       {filtringContacts.map(contact => (
         <ContactEl
           contact={contact}
@@ -23,7 +24,7 @@ const ContactList = () => {
           onDelete={() => dispatch(deleteContact(contact.id))}
         />
       ))}
-    </ul>
+    </Items>
   );
 };
 

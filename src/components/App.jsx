@@ -1,4 +1,3 @@
-// import { ContactContainer } from './App.styled';
 import { Routes, Route } from 'react-router-dom';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
@@ -31,12 +30,17 @@ export const App = () => {
         <Route
           path="/register"
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<RegisterPage />} />
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegisterPage />}
+            />
           }
         />
         <Route
           path="/login"
-          element={<RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />}
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
         />
         <Route
           path="/phonebook"
@@ -52,7 +56,7 @@ export const App = () => {
         />
       </Route>
 
-      <Route path="*" element={<Layout/>} /> 
+      <Route path="*" element={<Layout />} />
     </Routes>
   );
 };

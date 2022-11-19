@@ -4,7 +4,7 @@ import AppBar from './AppBar';
 
 export const Layout = () => {
   return (
-    <div style={{ maxWidth: '760px', margin: '100px', display: 'flex', justifyContent: 'center' }}>
+    <div style={{ maxWidth: '760px', margin: '100px', display: 'flex', justifyContent: 'center', position:'relative' }}>
       <AppBar />
       <Suspense fallback={null}>
         <div

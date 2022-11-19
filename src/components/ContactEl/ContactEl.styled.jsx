@@ -13,5 +13,19 @@ export const Button = styled.button`
 `;
 
 export const ListEl = styled.li`
+display: flex;
+justify-content: space-between;
   margin: 4px 0;
+`;
+
+export const UserInfo = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+`;
+
+export const UserName = styled.div`
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 8px;
 `;

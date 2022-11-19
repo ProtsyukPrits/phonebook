@@ -1,6 +1,6 @@
 import ContactList from "components/ContactList"
 import Filter from "components/Filter"
-import { Container, Counter } from "./Contacts.styled"
+import { Container, Counter, ContactNumber } from './Contacts.styled';
 import { selectContacts, selectError, selectIsLoading } from "redux/contacts/selectors"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
@@ -20,8 +20,12 @@ const Contacts = () => {
 
   return (
     <Container>
-      <Counter>You have {contacts.length} contacts</Counter>
-      <Filter />
+      <div>
+        <Counter>
+          You have <ContactNumber>{contacts.length}</ContactNumber> contacts
+        </Counter>
+        <Filter />
+      </div>
       {isLoading && !error && <b>Request in progress...</b>}
       {contacts.length > 0 && <ContactList />}
     </Container>
