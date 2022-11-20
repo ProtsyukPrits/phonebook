@@ -16,7 +16,7 @@ const styles = {
 
     h1: {
       m: 0,
-      fontWeight: 'bold',
+      fontWeight: 'Extra Bold',
       textAlign: 'center',
     },
 

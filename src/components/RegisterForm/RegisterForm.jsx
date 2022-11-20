@@ -3,21 +3,32 @@ import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import { Label } from './RegisterForm.styled';
 import { Input } from '@chakra-ui/react';
+import Notiflix from 'notiflix';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
-    const form = e.currentTarget;
+    const form = e.currentTarget.elements;
+    const formReset = e.currentTarget;
+
+    if (
+      form.name.value === '' ||
+      form.email.value === '' ||
+      form.password.value === ''
+    ) {
+      return Notiflix.Notify.info('please, enter your details');
+    }
+
     dispatch(
       register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        name: form.name.value,
+        email: form.email.value,
+        password: form.password.value,
       })
     );
-    form.reset();
+    formReset.reset();
   };
 
   return (

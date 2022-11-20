@@ -12,7 +12,7 @@ const UserMenu = () => {
   return (
     <Container>
       <Title>
-        Wellcome, <b>{(user.name).toUpperCase()}!</b>
+        Welcome, <b>{(user.name).toUpperCase()}!</b>
       </Title>
       <Button size='sm' type="button" onClick={() => dispatch(logOut())}>
         Logout

@@ -1,7 +1,8 @@
-import { useDispatch } from "react-redux";
-import { logIn } from "redux/auth/operations";
-import { Label } from "./LoginForm.styled";
-import { Button, Input } from "@chakra-ui/react";
+import { useDispatch } from 'react-redux';
+import { logIn } from 'redux/auth/operations';
+import { Label } from './LoginForm.styled';
+import { Button, Input } from '@chakra-ui/react';
+import Notiflix from 'notiflix';
 
 
 const LoginForm = () => {
@@ -9,15 +10,25 @@ const LoginForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const form = e.currentTarget;
+    const form = e.currentTarget.elements;
+    const formReset = e.currentTarget;
+
+    if (
+      form.email.value === '' ||
+      form.password.value === ''
+    ) {
+      return Notiflix.Notify.info('please, enter your details');
+    }
+
     dispatch(
       logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        email: form.email.value,
+        password: form.password.value,
       })
     );
-    form.reset();
-  }
+
+    formReset.reset();
+  };
 
   return (
     <form autoComplete="off" onSubmit={handleSubmit}>
@@ -32,6 +43,6 @@ const LoginForm = () => {
       <Button type="submit">Log In</Button>
     </form>
   );
-}
+};
 
 export default LoginForm;
