@@ -6,7 +6,7 @@ export const Container = styled.div`
 export const Counter = styled.div`
   position: absolute;
   top:0;
-  right:20%;
+  right:34%;
   text-decoration: underline;
   font-weight: 600;
   
