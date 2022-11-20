@@ -1,16 +1,11 @@
-import AvatarIcons from 'avataaars';
-import { generateRandomAvatarOptions } from '..//..//avatar';
+import { BigHead } from '@bigheads/core';
+import { getRandomOptions } from 'utils/bigheads';
 
 const Avatars = () => {
   return (
-    <>
-      <AvatarIcons
-        style={{ width: '50px', height: '50px' }}
-        avatarStyle="Circle"
-        {...generateRandomAvatarOptions()}
-      />
-    </>
+    <div style={{ width: '50px' }}>
+      <BigHead {...getRandomOptions()} />
+    </div>
   );
 };
-
 export default Avatars;
