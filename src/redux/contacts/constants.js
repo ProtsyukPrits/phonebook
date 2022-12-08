@@ -28,6 +28,7 @@ const handleDeleteContactFulfilled = (state, action) => {
   state.items.splice(index, 1);
 };
 
+
 export  {
   handlePending,
   handleRejected,

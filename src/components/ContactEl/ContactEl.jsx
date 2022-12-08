@@ -1,11 +1,23 @@
 import { Button } from '@chakra-ui/react';
 import Avatars from 'components/Avatars';
+import EditContact from 'components/EditContact';
 import { PropTypes } from 'prop-types';
-import { ListEl, UserInfo,UserName } from './ContactEl.styled';
+import { useState } from 'react';
+import { ListEl, UserInfo, UserName } from './ContactEl.styled';
 
 const ContactEl = ({ contact, onDelete }) => {
+  const [ isOpenModal, setIsOpenModal ] = useState(false);
+
+  const handleEditContact = e => {
+   setIsOpenModal(true) 
+  };
+
+   const handleEditContactClose = e => {
+     setIsOpenModal(false);
+   };
+
   return (
-    <ListEl>
+    <ListEl onClick={handleEditContact}>
       <UserInfo>
         <Avatars />
         <UserName>
@@ -15,7 +27,7 @@ const ContactEl = ({ contact, onDelete }) => {
       <Button
         size="sm"
         border="1px solid"
-        borderRadius='100%'
+        borderRadius="100%"
         type="button"
         onClick={() => {
           onDelete(contact.id);
@@ -23,6 +35,9 @@ const ContactEl = ({ contact, onDelete }) => {
       >
         Delete
       </Button>
+      {isOpenModal && (
+        <EditContact onClick={handleEditContactClose} contact={contact} />
+      )}
     </ListEl>
   );
 };
